@@ -187,9 +187,14 @@ public class funzioni_server extends server {
     }
 
     // Funzione per il comando mkdir
+// Funzione per il comando mkdir
     public static String mkdir(String newDirectoryName) {
-        // Crea un oggetto File con il nome della nuova directory
-        File newDir = new File(newDirectoryName);
+        // Costruisci il percorso completo della nuova directory utilizzando il path corrente
+        String directoryPath = currentDirectory + File.separator + newDirectoryName;
+
+        // Crea un oggetto File per la nuova directory
+        File newDir = new File(directoryPath);
+
         // Verifica se la directory non esiste
         if (!newDir.exists()) {
             // Prova a creare la directory e restituisce un messaggio di conferma
@@ -206,9 +211,13 @@ public class funzioni_server extends server {
     }
 
     // Funzione per il comando touch
+// Funzione per il comando touch
     public static String touch(String newFileName) {
-        // Crea un oggetto File con il nome del nuovo file
-        File newFile = new File(newFileName);
+        // Costruisci il percorso completo del nuovo file utilizzando il path corrente
+        String filePath = currentDirectory + File.separator + newFileName;
+
+        // Crea un oggetto File per il nuovo file
+        File newFile = new File(filePath);
 
         try {
             // Prova a creare il nuovo file
@@ -304,8 +313,11 @@ public class funzioni_server extends server {
 
     // Funzione per il comando rm
     public static String rm(String message) {
+        // Costruisci il percorso completo del file o della directory da rimuovere utilizzando il path corrente
+        String filePath = currentDirectory + File.separator + message;
+
         // Crea un oggetto File per il file o la directory da rimuovere
-        File fileOrDirectory = new File(message);
+        File fileOrDirectory = new File(filePath);
 
         // Verifica se il file o la directory esistono
         if (fileOrDirectory.exists()) {
