@@ -186,7 +186,6 @@ public class funzioni_server extends server {
 
 // Funzione per il comando mkdir
     public static String mkdir(String newDirectoryName) {
-        // Costruisci il percorso completo della nuova directory utilizzando il path corrente
         String directoryPath = currentDirectory + File.separator + newDirectoryName;
 
         // Crea un oggetto File per la nuova directory
@@ -209,7 +208,6 @@ public class funzioni_server extends server {
 
 // Funzione per il comando touch
     public static String touch(String newFileName) {
-        // Costruisci il percorso completo del nuovo file utilizzando il path corrente
         String filePath = currentDirectory + File.separator + newFileName;
 
         // Crea un oggetto File per il nuovo file
@@ -236,7 +234,6 @@ public class funzioni_server extends server {
         // Divide il messaggio in due parti utilizzando lo spazio come delimitatore
         String[] parts = message.split(" ", 2);
 
-        // Verifica se ci sono esattamente due parti nel messaggio
         if (parts.length == 2) {
             // Estrae il percorso del file sorgente e il percorso del file destinazione
             String sourceFilePath = parts[0]; // Percorso del file sorgente
@@ -275,7 +272,6 @@ public class funzioni_server extends server {
         // Divide il messaggio in due parti usando lo spazio come delimitatore
         String[] parts = message.split(" ", 2);
 
-        // Assicurati che ci siano due parti nel messaggio
         if (parts.length == 2) {
             // Estrae il percorso di origine e il percorso di destinazione
             String sourcePath = parts[0]; // Percorso di origine
@@ -309,7 +305,6 @@ public class funzioni_server extends server {
 
     // Funzione per il comando rm
     public static String rm(String message) {
-        // Costruisci il percorso completo del file o della directory da rimuovere utilizzando il path corrente
         String filePath = currentDirectory + File.separator + message;
 
         // Crea un oggetto File per il file o la directory da rimuovere
