@@ -1,6 +1,4 @@
 import java.io.*;
-import java.net.ServerSocket;
-import java.net.Socket;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -186,7 +184,6 @@ public class funzioni_server extends server {
         }
     }
 
-    // Funzione per il comando mkdir
 // Funzione per il comando mkdir
     public static String mkdir(String newDirectoryName) {
         // Costruisci il percorso completo della nuova directory utilizzando il path corrente
@@ -210,7 +207,6 @@ public class funzioni_server extends server {
         }
     }
 
-    // Funzione per il comando touch
 // Funzione per il comando touch
     public static String touch(String newFileName) {
         // Costruisci il percorso completo del nuovo file utilizzando il path corrente
