@@ -142,7 +142,13 @@ public class server {
                             } catch (IOException e) {
                                 e.printStackTrace();
                             } finally {
-                                System.out.println("fine");
+                                try{
+                                    System.out.println("fine");
+                                    clientWriter.close();
+                                    clientReader.close();
+                                }catch(IOException e){
+                                    e.printStackTrace();
+                                }
                             }
                         }).start();
                     } else funzioni_server.exit();

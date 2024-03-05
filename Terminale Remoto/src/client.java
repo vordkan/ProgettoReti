@@ -73,6 +73,12 @@ public class client {
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
+                }finally{
+                    try{
+                        serverReader.close();
+                    }catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }).start();
 
@@ -85,6 +91,13 @@ public class client {
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
+                }finally{
+                    try{
+                        userInputReader.close();
+                        serverWriter.close();
+                    }catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }).start();
 
